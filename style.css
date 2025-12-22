@@ -4,23 +4,18 @@ body {
 }
 
 header img {
-    border-radius: 900px;
-    margin-left: 0 0;
-
+    border-radius:  900px;
 }
 
 header {
+    margin: 0;
     display: inline-block;
     width: 100%;
     height: 100px;
     background-color: rgb(36, 5, 67);
-    position: sticky;
-    display: flex;
-    padding: 18px 28px;
-    position: sticky;
+    position: fixed;
     top: 0;
-    backdrop-filter: blur(6px);
-    z-index: 20
+
 }
 
 img,
@@ -50,13 +45,13 @@ h3 {
 }
 
 nav {
-    text-align: center;
     display: flex;
     margin: 20px;
     position: absolute;
     top: 0;
     right: 0;
     margin: 35px;
+    float: right;
 }
 
 a {
@@ -65,11 +60,9 @@ a {
     font-size: 20px;
     border-bottom: 5px solid transparent;
     padding-bottom: 2px;
-    display: inline-block;
     text-decoration: none;
-    position: relative;
-    text-align: center;
     margin: 15px;
+    flex-wrap: wrap;
 }
 
 a:hover {
@@ -90,9 +83,7 @@ a:hover {
     width: 50px;
     height: 50px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
 }
-
 .logo:hover {
     background: bottom;
     color: transparent;
@@ -138,10 +129,8 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
     width: 100%;
-    margin: 20px;
     transition: 0.3S, postion-relative 0.3s;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
 
 }
 
@@ -152,6 +141,8 @@ img {
 .contatc {
     display: inline-block;
     justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .contatc2 input {
@@ -174,7 +165,10 @@ img {
     background-color: green;
     color: white;
 }
-
+.conctac1{
+    width: 100%;
+    flex-wrap: wrap;
+}
 .infos,
 .contatc2 {
     display: inline-block;
@@ -186,7 +180,6 @@ img {
 
 .message {
     background-color: rgba(30, 28, 28, 0.705);
-    ;
     width: 400px;
     height: 230px;
     color: white;
@@ -197,6 +190,7 @@ img {
     color: white;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 
 .competence1,
@@ -206,7 +200,7 @@ img {
     display: inline-block;
     justify-content: center;
     flex-direction: column-reverse;
-    margin: 10px;
+    margin: 0px;
     width: 100%;
 }
 
@@ -332,12 +326,9 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
     width: 950px;
     border-radius: 10px;
     height: 400px;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .contatc3:hover {
@@ -390,127 +381,42 @@ footer {
     text-align: center;
     align-items: center;
 }
-
-/* Telephone */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    nav {
-        flex-direction: column;
-        text-align: center;
+@media screen  and (max-width:1068px){
+    .conctac1.contatc2,.contatc3{
+    width: 100%;
     }
 }
-
-/* Tablette */
-@media (min-width: 601px) and (max-width: 1024px) {
-    h1 {
-        font-size: 2.2rem;
+@media screen  and (max-width:483px)  {
+    .contatc3{
+        width: 100%;}
+        
     }
-
-    .projets {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+    @media screen  and (max-width:430px)  {
+    .contatc3{
+        width: 100%;}
+        section{
+            width: 100%; 
+        }
+        .conctac1.contatc2,.contatc3{
+    width: 100%;
     }
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-nav ul {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
+    .competence1{
         width: 100%;
-        text-align: center;
     }
-}
-
-.section {
-    padding: 2rem 0;
-}
-
-.section-content {
-    display: flex;
-    gap: 2rem;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .section-content {
-        flex-direction: column;
+    
     }
-}
-
-.projects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-}
-
-/* Tablette */
-@media (max-width: 1024px) {
-    .projects {
-        grid-template-columns: repeat(2, 1fr);
+    @media screen  and (max-width:10px)  {
+    .contatc3{
+        width: 100%;}
+        section{
+            width: 100%; 
+        }
+        .conctac1.contatc2,.contatc3{
+    width: 100%;
     }
-}
-
-/* Téléphone */
-@media (max-width: 600px) {
-    .projects {
-        grid-template-columns: 1fr;
+    .competence1{
+        width: 100%;
     }
-}
-
-h1 {
-    font-size: 3rem;
-}
-
-h2 {
-    font-size: 2rem;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2rem;
+    
     }
 
-    h2 {
-        font-size: 1.5rem;
-    }
-}
