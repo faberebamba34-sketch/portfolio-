@@ -190,17 +190,17 @@ img {
     color: white;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    margin: 15px;
 }
 
 .competence1,
 .front,
 .back,
 .app {
+    justify-content: space-between;
     display: inline-block;
-    justify-content: center;
     flex-direction: column-reverse;
-    margin: 0px;
+    margin: 15px;
     width: 100%;
 }
 
@@ -313,7 +313,7 @@ img {
 }
 
 .p {
-    color: black;
+    color: white;
 }
 
 .p:hover {
@@ -403,7 +403,10 @@ footer {
     .competence1{
         width: 100%;
     }
-    
+    .contatc3{
+        width: 100%;
+        height: auto;
+    }
     }
     @media screen  and (max-width:10px)  {
     .contatc3{
@@ -411,12 +414,68 @@ footer {
         section{
             width: 100%; 
         }
-        .conctac1.contatc2,.contatc3{
-    width: 100%;
-    }
     .competence1{
         width: 100%;
     }
-    
+    .conctac1.contatc2,.contatc3{
+    width: 100%;
     }
+    
+.front,
+.back,
+.app{
+    width: 100%;
+}
+    }
+@media screen  and (max-width:412px)  {
+    .contatc3{
+        width: 100%;}
+        section{
+            width: 100%; 
+        }
+    .competence1{
+        width: 100%;
+    }
+    .conctac1.contatc2,.contatc3{
+    width: 100%;
+    }
+}
+.front,
+.back,
+.app{
+    width: 100%;
+}
+.Pr{
+    width: 100;
+}
+@media screen and (max-width:900px) {
+    header{
+        height: 130px;
+    }
+    nav{
+        margin: 70px;
+    }
+    a{
+        font-size: 18px;
+        margin: 10px;
+    }
+}
+@media screen and (max-width:500px) {
+    header{
+        height: 130px;
+    }
+    nav{
+        margin: 70px;
+    }
+    a{
+        font-size: 15px;
+        margin: 10px;
+    }
+}
+@media screen and (max-width:460px) {
+    nav{
+        text-align: center;
+    }
+}
+
 
