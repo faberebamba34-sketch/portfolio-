@@ -200,7 +200,7 @@ img {
     justify-content: space-between;
     display: inline-block;
     flex-direction: column-reverse;
-    margin: 15px;
+    margin: 20px;
     width: 100%;
 }
 
@@ -440,11 +440,7 @@ footer {
     width: 100%;
     }
 }
-.front,
-.back,
-.app{
-    width: 100%;
-}
+
 .Pr{
     width: 100;
 }
@@ -488,6 +484,15 @@ footer {
         text-align: center;
         margin: 5px;
     }
+    .contatc{
+        width: 100%;
+    }
+    .conctac1{
+        width: 90%;
+    }
+}
+@media screen {
+    
 }
 @media screen and (max-width:480px) {
     .voy,.cafe,.mon,.front,
@@ -505,5 +510,59 @@ footer {
         width: 100%;
     }
 }
+@media screen and (max-width:420px)  {
+    .voy,.cafe,.mon{
+    height: 530px;
+}
+.front,
+.back,
+.app{
+    height: 430px;
+}
+}
+@media screen and (max-width:380px)  {
+    .voy,.cafe,.mon{
+    height: 550px;
+}
+.front,
+.back,
+.app{
+    height: 450px;
+}
+}
+@media screen and (max-width:420px)  {
+    .competence{
 
+}
+}
+@media screen and (max-width:350px)  {
+    .voy,.cafe,.mon{
+    height: 580px;
+}
+.front,
+.back,
+.app{
+    height: 480px;
+}
+}
+@media screen and (max-width:340px)  {
+    .voy,.cafe,.mon{
+    height: 600px;
+}
+.front,
+.back,
+.app{
+    height: 500px;
+}
+}
+@media screen and (max-width:330px)  {
+    .voy,.cafe,.mon{
+    height: 620px;
+}
+.front,
+.back,
+.app{
+    height: 500px;
+}
+}
 
