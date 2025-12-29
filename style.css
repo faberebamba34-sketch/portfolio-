@@ -151,6 +151,7 @@ img {
     width: 400px;
     background-color: rgba(30, 28, 28, 0.705);
     height: 40px;
+    outline: none;
 
 }
 
@@ -168,6 +169,8 @@ img {
 .conctac1{
     width: 100%;
     flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
 }
 .infos,
 .contatc2 {
@@ -530,9 +533,24 @@ footer {
     height: 450px;
 }
 }
-@media screen and (max-width:420px)  {
-    .competence{
-
+@media screen and (max-width:300px)  {
+    .voy,.cafe,.mon{
+    height: 620px;
+}
+.front,
+.back,
+.app{
+    height: 580px;
+}
+}
+@media screen and (max-width:320px)  {
+    .voy,.cafe,.mon{
+    height: 620px;
+}
+.front,
+.back,
+.app{
+    height: 550px;
 }
 }
 @media screen and (max-width:350px)  {
@@ -562,7 +580,15 @@ footer {
 .front,
 .back,
 .app{
-    height: 500px;
+    height: 520px;
+}
+}
+@media screen and (max-width:470px)  {
+    .conctac1,.contatc2 {
+        width: 90%;
+    }
+    .contatc2 input,.message {
+    width: 98%;
 }
 }
 
