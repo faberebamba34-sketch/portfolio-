@@ -475,6 +475,34 @@ footer {
 @media screen and (max-width:460px) {
     nav{
         text-align: center;
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width:460px) {
+    nav{
+        text-align: center;
+        justify-content: space-between;
+    }
+    a{
+        justify-content: space-between;
+        text-align: center;
+        margin: 5px;
+    }
+}
+@media screen and (max-width:480px) {
+    .voy,.cafe,.mon,.front,
+.back,
+.app{
+        width: 90%;
+    }
+    .im{
+        width: 100%
+    }
+    
+}
+@media screen and (max-width:458px)  {
+    .conctac1{
+        width: 100%;
     }
 }
 
