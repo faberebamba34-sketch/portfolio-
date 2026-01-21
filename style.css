@@ -4,7 +4,7 @@ body {
 }
 
 header img {
-    border-radius:  900px;
+    border-radius: 900px;
 }
 
 header {
@@ -18,9 +18,65 @@ header {
 
 }
 
+.image {
+    background-color: aqua;
+
+
+}
+
+
+
+button {
+    border: 1px solid;
+}
+
+.text {
+
+    width: 70%;
+    margin-left: 30px;
+    text-align: center;
+}
+
+.q {
+    transition: transform 0.5s ease;
+}
+
+.q:hover {
+    transform: translateY(-15px);
+}
+
+.btn3 {
+    transition: transform 0.5s ease;
+}
+
+.btn3:hover {
+    transform: scale(1.1);
+}
+
+.btn1,
+.btn2 {
+    transition: transform 0.5s ease;
+    width: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+}
+
+.btn1:hover {
+    background-color: rgb(15, 2, 27);
+    transform: scale(1.1);
+}
+
+.btn2:hover {
+    transform: scale(1.1);
+    background-color: rgb(36, 5, 67);
+}
+
 img,
 h1 {
     display: inline-block;
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 p {
@@ -39,9 +95,15 @@ h2 {
 }
 
 h3 {
-    align-items: center;
     color: orange;
-    text-align: center;
+    margin-left: 40px;
+}
+
+button {
+    background-color: #8a5cf625;
+    height: 30px;
+    color: white;
+    font-size: 15px;
 }
 
 nav {
@@ -54,7 +116,7 @@ nav {
     float: right;
 }
 
-a {
+.a {
     transition: color 0.5s ease, border-bottom 0.5s ease;
     color: white;
     font-size: 20px;
@@ -65,7 +127,7 @@ a {
     flex-wrap: wrap;
 }
 
-a:hover {
+.a:hover {
     background: bottom;
     color: orange;
     border-bottom: 5px solid orange;
@@ -84,6 +146,7 @@ a:hover {
     height: 50px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .logo:hover {
     background: bottom;
     color: transparent;
@@ -131,33 +194,10 @@ img {
     width: 100%;
     transition: 0.3S, postion-relative 0.3s;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
 
 .acceuille1:hover {
     transform: translateY(-5px);
-}
-
-.contatc {
-    display: inline-block;
-    justify-content: center;
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-.contatc2 input {
-    border-radius: 10px;
-    color: white;
-    width: 400px;
-    background-color: rgba(30, 28, 28, 0.705);
-    height: 40px;
-    outline: none;
-
-}
-
-.contatc2 {
-    height: 400px;
-    background-color: rgb(15, 2, 27);
 }
 
 .contatc2 input[type="submit"] {
@@ -165,27 +205,21 @@ img {
     height: 30px;
     background-color: green;
     color: white;
+    transition: transform 0.3s ease;
 }
-.conctac1{
+
+.contatc2 input[type="submit"]:hover {
+    transform: scale(1.1);
+}
+
+.conctac1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
     width: 100%;
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-}
-.infos,
-.contatc2 {
-    display: inline-block;
-}
-
-.infos {
-    background-color: brown;
-}
-
-.message {
-    background-color: rgba(30, 28, 28, 0.705);
-    width: 400px;
-    height: 230px;
-    color: white;
 }
 
 .competence1 {
@@ -208,30 +242,43 @@ img {
 }
 
 .front {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #8a5cf642;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    width: 450px;
+    width: 400px;
     border-radius: 10px;
-    height: 380px;
+    height: 300px;
     text-decoration: none;
+
+
 }
 
 .front:hover {
     transform: translateY(-5px);
 }
 
+.button {
+    margin-left: 30px;
+}
+
+button {
+    background-color: transparent;
+    font-family: "Nosifer", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
 .back {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #3b83f635;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    width: 450px;
+    width: 400px;
     border-radius: 10px;
-    height: 380px;
+    height: 300px;
     text-decoration: none;
 }
 
@@ -240,15 +287,15 @@ img {
 }
 
 .app {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #22c55e41;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    width: 450px;
+    width: 400px;
     border-radius: 10px;
     vertical-align: top;
-    height: 380px;
+    height: 300px;
     text-decoration: none;
 }
 
@@ -263,9 +310,9 @@ img {
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    width: 450px;
+    width: 400px;
     border-radius: 10px;
-    height: 500px;
+    height: 470px;
     text-decoration: none;
 }
 
@@ -274,14 +321,14 @@ img {
 }
 
 .cafe {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.404);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    width: 450px;
-    border-radius: 10px;
-    height: 500px;
+    width: 400px;
+    border-radius: 20px;
+    height: 470px;
     text-decoration: none;
 }
 
@@ -290,14 +337,14 @@ img {
 }
 
 .mon {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #0000004f;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    width: 450px;
-    border-radius: 10px;
-    height: 500px;
+    width: 400px;
+    border-radius: 20px;
+    height: 470px;
     text-decoration: none;
 }
 
@@ -323,44 +370,21 @@ img {
     color: white;
 }
 
-.contatc3 {
+.Z {
     color: white;
-    background-color: rgb(15, 2, 27);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 950px;
-    border-radius: 10px;
-    height: 400px;
-}
-
-.contatc3:hover {
-    transform: translateY(-5px);
-}
-
-.contatc2 {
-    height: 400px;
-    background-color: rgb(15, 2, 27);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    border: 1px solid rgba(30, 28, 28, 0.705);
+    background-color: rgba(30, 28, 28, 0.705);
+    width: 350px;
+    height: 35px;
     border-radius: 10px;
 }
 
-.contatc2:hover {
-    transform: translateY(-5px);
-}
-
-.conctac1 {
-    padding: 20px;
-    display: inline-block;
-}
-
-.contatc {
-    background-color: rgb(36, 5, 67);
-    box-shadow: 0 0 25px rgb(22, 22, 69);
-    width: 100%;
+textarea {
+    color: white;
+    background-color: rgba(30, 28, 28, 0.705);
+    width: 720px;
+    height: 300px;
+    border-radius: 10px;
 }
 
 .conctac1,
@@ -384,253 +408,331 @@ footer {
     text-align: center;
     align-items: center;
 }
-@media screen  and (max-width:1068px){
-    .conctac1.contatc2,.contatc3{
-    width: 100%;
-    }
-}
-@media screen  and (max-width:483px)  {
-    .contatc3{
-        width: 100%;}
-        
-    }
-    @media screen  and (max-width:430px)  {
-    .contatc3{
-        width: 100%;}
-        section{
-            width: 100%; 
-        }
-        .conctac1.contatc2,.contatc3{
-    width: 100%;
-    }
-    .competence1{
-        width: 100%;
-    }
-    .contatc3{
-        width: 100%;
-        height: auto;
-    }
-    }
-    @media screen  and (max-width:10px)  {
-    .contatc3{
-        width: 100%;}
-        section{
-            width: 100%; 
-        }
-    .competence1{
-        width: 100%;
-    }
-    .conctac1.contatc2,.contatc3{
-    width: 100%;
-    }
-    
-.front,
-.back,
-.app{
-    width: 100%;
-}
-    }
-@media screen  and (max-width:412px)  {
-    .contatc3{
-        width: 100%;}
-        section{
-            width: 100%; 
-        }
-    .competence1{
-        width: 100%;
-    }
-    .conctac1.contatc2,.contatc3{
-    width: 100%;
+
+@media screen and (max-width:900px) {
+
+    .btn1,
+    .btn2 {
+        margin: 15px;
     }
 }
 
-.Pr{
+@media screen and (max-width:900px) {
+    .competence1 {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+
+    }
+}
+
+@media screen and (max-width:1068px) {
+
+    .conctac1.contatc2,
+    .contatc3 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:483px) {
+    .contatc3 {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:430px) {
+    .contatc3 {
+        width: 100%;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .conctac1.contatc2,
+    .contatc3 {
+        width: 100%;
+    }
+
+    .competence1 {
+        width: 100%;
+    }
+
+    .contatc3 {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width:10px) {
+    .contatc3 {
+        width: 100%;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .competence1 {
+        width: 100%;
+    }
+
+    .conctac1.contatc2,
+    .contatc3 {
+        width: 100%;
+    }
+
+    .front,
+    .back,
+    .app {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:412px) {
+    .contatc3 {
+        width: 100%;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .competence1 {
+        width: 100%;
+    }
+
+    .conctac1.contatc2,
+    .contatc3 {
+        width: 100%;
+    }
+}
+
+.Pr {
     width: 100;
 }
+
 @media screen and (max-width:900px) {
-    header{
+    header {
         height: 130px;
     }
-    nav{
+
+    nav {
         margin: 70px;
         margin-right: 0px;
     }
-    a{
+
+    a {
         font-size: 18px;
         margin: 10px;
     }
 }
+
 @media screen and (max-width:500px) {
-    header{
+    header {
         height: 130px;
     }
-    nav{
+
+    nav {
         margin: 70px;
         margin-right: 10px;
     }
-    a{
+
+    a {
         font-size: 15px;
         margin: 10px;
     }
 }
+
 @media screen and (max-width:460px) {
-    nav{
+    nav {
         text-align: center;
         justify-content: space-between;
 
     }
 }
+
 @media screen and (max-width:460px) {
-    nav{
+    nav {
         text-align: center;
         justify-content: space-between;
     }
-    a{
+
+    a {
         justify-content: space-between;
         text-align: center;
         margin: 5px;
     }
-    .contatc{
+
+    .contatc {
         width: 100%;
     }
-    .conctac1{
+
+    .conctac1 {
         width: 90%;
     }
 }
-@media screen {
-    
-}
+
+@media screen {}
+
 @media screen and (max-width:480px) {
-    .voy,.cafe,.mon,.front,
-.back,
-.app{
+
+    .voy,
+    .cafe,
+    .mon,
+    .front,
+    .back,
+    .app {
         width: 90%;
     }
-    .im{
+
+    .im {
         width: 100%
     }
-    
+
 }
-@media screen and (max-width:458px)  {
-    .conctac1{
+
+@media screen and (max-width:458px) {
+    .conctac1 {
         width: 100%;
     }
 }
-@media screen and (max-width:420px)  {
-    .voy,.cafe,.mon{
-    height: 530px;
+
+@media screen and (max-width:420px) {
+
+    .voy,
+    .cafe,
+    .mon {
+        height: 530px;
+    }
+
+    .front,
+    .back,
+    .app {
+        height: 300px;
+    }
+
 }
-.front,
-.back,
-.app{
-    height: 430px;
+
+@media screen and (max-width:380px) {
+
+    .voy,
+    .cafe,
+    .mon {
+        height: 550px;
+    }
+
 }
+
+@media screen and (max-width:300px) {
+
+    .voy,
+    .cafe,
+    .mon {
+        height: 620px;
+    }
+
 }
-@media screen and (max-width:380px)  {
-    .voy,.cafe,.mon{
-    height: 550px;
+
+@media screen and (max-width:320px) {
+
+    .voy,
+    .cafe,
+    .mon {
+        height: 620px;
+    }
+
 }
-.front,
-.back,
-.app{
-    height: 450px;
+
+@media screen and (max-width:350px) {
+
+    .voy,
+    .cafe,
+    .mon {
+        height: 580px;
+    }
+
 }
+
+@media screen and (max-width:340px) {
+
+    .voy,
+    .cafe,
+    .mon {
+        height: 600px;
+    }
+
 }
-@media screen and (max-width:300px)  {
-    .voy,.cafe,.mon{
-    height: 620px;
+
+@media screen and (max-width:330px) {
+
+    .voy,
+    .cafe,
+    .mon {
+        height: 620px;
+    }
+
 }
-.front,
-.back,
-.app{
-    height: 580px;
-}
-}
-@media screen and (max-width:320px)  {
-    .voy,.cafe,.mon{
-    height: 620px;
-}
-.front,
-.back,
-.app{
-    height: 550px;
-}
-}
-@media screen and (max-width:350px)  {
-    .voy,.cafe,.mon{
-    height: 580px;
-}
-.front,
-.back,
-.app{
-    height: 480px;
-}
-}
-@media screen and (max-width:340px)  {
-    .voy,.cafe,.mon{
-    height: 600px;
-}
-.front,
-.back,
-.app{
-    height: 500px;
-}
-}
-@media screen and (max-width:330px)  {
-    .voy,.cafe,.mon{
-    height: 620px;
-}
-.front,
-.back,
-.app{
-    height: 520px;
-}
-}
-@media screen and (max-width:470px)  {
-    .conctac1,.contatc2 {
+
+@media screen and (max-width:470px) {
+
+    .conctac1,
+    .contatc2 {
         width: 90%;
     }
-    .contatc2 input,.message {
-    width: 98%;
+
+    .contatc2 input,
+    .message {
+        width: 98%;
+    }
 }
-}
+
 @media screen and (max-width:420) {
-    a{
+    a {
         font-size: 5px;
         margin: 2px;
     }
-    header{
+
+    header {
         height: 150px;
     }
-    nav{
+
+    nav {
         margin: 90px;
         margin-right: 0px;
     }
 
 }
+
 @media screen and (max-width:415) {
-    a{
+    a {
         font-size: 5px;
         margin: 1px;
     }
-    header{
+
+    header {
         height: 150px;
     }
-    nav{
+
+    nav {
         margin: 100px;
         text-align: center;
     }
-    
+
 }
+
 @media screen and (max-width:400) {
-    a{
+    a {
         font-size: 5px;
         margin: 1px;
     }
-    header{
+
+    header {
         height: 150px;
     }
-    nav{
+
+    nav {
         margin: 120px;
         text-align: center;
         margin-left: 10px;
