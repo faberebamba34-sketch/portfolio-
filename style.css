@@ -86,7 +86,13 @@ h1 {
     font-weight: 400;
     font-style: normal;
 }
+h2{
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 samp{
+    color:purple ;
     font-family: "Nosifer", sans-serif;
     font-weight: 400;
     font-style: normal;
