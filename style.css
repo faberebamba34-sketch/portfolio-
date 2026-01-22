@@ -625,6 +625,9 @@ footer {
         margin: 5px;
         font-size: 15px;
     }
+    nav{
+        margin-top: 20px;
+    }
 }
 
 @media screen and (max-width:380px) {
