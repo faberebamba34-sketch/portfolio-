@@ -589,6 +589,8 @@ footer {
         width: 100%
     }
 
+    
+    
 }
 
 @media screen and (max-width:458px) {
@@ -612,6 +614,16 @@ footer {
     }
     .Z{
     margin-top: 10px;
+    }
+    .d{
+        width: 40;
+    }
+    h1{
+        font-size: 20px;
+    }
+    .a{
+        margin: 5px;
+        font-size: 15px;
     }
 }
 
