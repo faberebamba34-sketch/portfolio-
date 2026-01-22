@@ -1,6 +1,7 @@
 body {
     background-color: rgb(15, 2, 27);
     margin: 0;
+
 }
 
 header img {
@@ -15,13 +16,11 @@ header {
     background-color: rgb(36, 5, 67);
     position: fixed;
     top: 0;
-
+    z-index: 999;
 }
 
 .image {
     background-color: aqua;
-
-
 }
 
 
@@ -42,7 +41,7 @@ button {
 }
 
 .q:hover {
-    transform: translateY(-15px);
+    transform: translateY(-5px);
 }
 
 .btn3 {
@@ -74,9 +73,6 @@ button {
 img,
 h1 {
     display: inline-block;
-    font-family: "Nosifer", sans-serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
 p {
@@ -86,6 +82,9 @@ p {
 h1 {
     vertical-align: top;
     color: white;
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 h2 {
@@ -251,8 +250,6 @@ img {
     border-radius: 10px;
     height: 300px;
     text-decoration: none;
-
-
 }
 
 .front:hover {
@@ -265,9 +262,10 @@ img {
 
 button {
     background-color: transparent;
-    font-family: "Nosifer", sans-serif;
-    font-weight: 200;
-    font-style: normal;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900px;
+    font-style: italic;
 }
 
 .back {
