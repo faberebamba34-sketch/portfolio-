@@ -610,7 +610,9 @@ footer {
     .app {
         height: 300px;
     }
-
+    .Z{
+    margin-top: 10px;
+    }
 }
 
 @media screen and (max-width:380px) {
