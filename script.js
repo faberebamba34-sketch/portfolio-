@@ -12,8 +12,6 @@ themeToggle.addEventListener("click", () => {
 // ===========================================================
 // PALETTE PICKER
 // ===========================================================
-root.setAttribute("data-palette", "emerald");
-
 const paletteToggle = document.getElementById("paletteToggle");
 const palettePanel = document.getElementById("palettePanel");
 const swatches = document.querySelectorAll(".swatch");
@@ -30,7 +28,6 @@ document.addEventListener("click", (e) => {
 });
 
 swatches.forEach(sw => {
-  if (sw.dataset.palette === "emerald") sw.classList.add("active");
   sw.addEventListener("click", () => {
     root.setAttribute("data-palette", sw.dataset.palette);
     swatches.forEach(s => s.classList.remove("active"));
@@ -127,7 +124,6 @@ let output = "";
 
 function typeCode() {
   if (lineIndex >= codeLines.length) return;
-
   const currentLine = codeLines[lineIndex];
 
   if (charIndex < currentLine.length) {
@@ -143,7 +139,6 @@ function typeCode() {
     setTimeout(typeCode, 90);
   }
 }
-
 setTimeout(typeCode, 500);
 
 // ===========================================================
@@ -154,7 +149,6 @@ const formNote = document.getElementById("formNote");
 
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
   const fname = document.getElementById("fname").value;
   const lname = document.getElementById("lname").value;
   const email = document.getElementById("email").value;
@@ -164,8 +158,34 @@ contactForm.addEventListener("submit", (e) => {
   const body = encodeURIComponent(`${message}\n\n— ${fname} ${lname} (${email})`);
 
   window.location.href = `mailto:votre.email@exemple.com?subject=${subject}&body=${body}`;
-
   formNote.textContent = "Votre client mail va s'ouvrir avec le message pré-rempli.";
+});
+
+// ===========================================================
+// FAQ ACCORDION
+// ===========================================================
+document.querySelectorAll(".accordion-item").forEach(item => {
+  const trigger = item.querySelector(".accordion-trigger");
+  const panel = item.querySelector(".accordion-panel");
+
+  trigger.addEventListener("click", () => {
+    const isOpen = item.classList.contains("open");
+
+    document.querySelectorAll(".accordion-item.open").forEach(openItem => {
+      if (openItem !== item) {
+        openItem.classList.remove("open");
+        openItem.querySelector(".accordion-panel").style.maxHeight = null;
+      }
+    });
+
+    if (isOpen) {
+      item.classList.remove("open");
+      panel.style.maxHeight = null;
+    } else {
+      item.classList.add("open");
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
 });
 
 // ===========================================================
@@ -176,9 +196,7 @@ const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
 if (!isCoarsePointer) {
   const cursorDot = document.getElementById("cursorDot");
   const cursorRing = document.getElementById("cursorRing");
-
-  let mouseX = 0, mouseY = 0;
-  let ringX = 0, ringY = 0;
+  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
 
   window.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
@@ -247,11 +265,81 @@ if (!isCoarsePointer) {
 }
 
 // ===========================================================
+// PLAYGROUND — interactive 3D cube
+// ===========================================================
+const cube = document.getElementById("cube3d");
+const rotOnBtn = document.getElementById("rotOn");
+const rotOffBtn = document.getElementById("rotOff");
+const speedSlider = document.getElementById("speedSlider");
+const axisBtns = document.querySelectorAll("[data-axis]");
+
+let rotating = true;
+let axis = "free";
+let speed = Number(speedSlider.value) / 10;
+let rotX = 25, rotY = -35;
+
+rotOnBtn.addEventListener("click", () => {
+  rotating = true;
+  rotOnBtn.classList.add("active");
+  rotOffBtn.classList.remove("active");
+});
+rotOffBtn.addEventListener("click", () => {
+  rotating = false;
+  rotOffBtn.classList.add("active");
+  rotOnBtn.classList.remove("active");
+});
+
+speedSlider.addEventListener("input", () => {
+  speed = Number(speedSlider.value) / 10;
+});
+
+axisBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    axis = btn.dataset.axis;
+    axisBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+  });
+});
+
+function animateCube() {
+  if (rotating) {
+    if (axis === "x" || axis === "free") rotX += speed;
+    if (axis === "y" || axis === "free") rotY += speed * 0.75;
+    cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+  }
+  requestAnimationFrame(animateCube);
+}
+cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+animateCube();
+
+// let the visitor also drag the cube directly
+let dragging = false;
+let lastX = 0, lastY = 0;
+const cubeScene = document.querySelector(".cube-scene");
+
+cubeScene.addEventListener("mousedown", (e) => {
+  dragging = true;
+  lastX = e.clientX;
+  lastY = e.clientY;
+});
+window.addEventListener("mouseup", () => { dragging = false; });
+window.addEventListener("mousemove", (e) => {
+  if (!dragging) return;
+  const dx = e.clientX - lastX;
+  const dy = e.clientY - lastY;
+  rotY += dx * 0.4;
+  rotX -= dy * 0.4;
+  lastX = e.clientX;
+  lastY = e.clientY;
+});
+cubeScene.style.cursor = "grab";
+
+// ===========================================================
 // HERO CANVAS — interactive constellation of points
 // ===========================================================
 const canvas = document.getElementById("heroCanvas");
 const ctx = canvas.getContext("2d");
-let heroSection = document.getElementById("accueil");
+const heroSection = document.getElementById("accueil");
 let points = [];
 let pointer = { x: null, y: null };
 
@@ -319,7 +407,6 @@ function drawCanvas() {
       }
     }
   }
-
   requestAnimationFrame(drawCanvas);
 }
 
@@ -328,10 +415,7 @@ heroSection.addEventListener("mousemove", (e) => {
   pointer.x = e.clientX - rect.left;
   pointer.y = e.clientY - rect.top;
 });
-heroSection.addEventListener("mouseleave", () => {
-  pointer.x = null;
-  pointer.y = null;
-});
+heroSection.addEventListener("mouseleave", () => { pointer.x = null; pointer.y = null; });
 
 resizeCanvas();
 drawCanvas();
