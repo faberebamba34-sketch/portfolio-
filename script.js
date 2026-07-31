@@ -1,38 +1,69 @@
 // ===========================================================
-// THEME TOGGLE
+// APPARENCE PANEL — theme, ambiance, accessibility
 // ===========================================================
 const root = document.documentElement;
-const themeToggle = document.getElementById("themeToggle");
 
-themeToggle.addEventListener("click", () => {
-  const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  root.setAttribute("data-theme", next);
-});
-
-// ===========================================================
-// PALETTE PICKER
-// ===========================================================
 const paletteToggle = document.getElementById("paletteToggle");
+const paletteClose = document.getElementById("paletteClose");
 const palettePanel = document.getElementById("palettePanel");
-const swatches = document.querySelectorAll(".swatch");
+const paletteBackdrop = document.getElementById("paletteBackdrop");
+const ambianceRows = document.querySelectorAll(".ambiance-row");
+const themeSwitch = document.getElementById("themeSwitch");
+const contrastToggle = document.getElementById("contrastToggle");
+const motionToggle = document.getElementById("motionToggle");
+
+function openPanel() {
+  palettePanel.classList.add("open");
+  paletteBackdrop.classList.add("open");
+}
+function closePanel() {
+  palettePanel.classList.remove("open");
+  paletteBackdrop.classList.remove("open");
+}
 
 paletteToggle.addEventListener("click", (e) => {
   e.stopPropagation();
-  palettePanel.classList.toggle("open");
+  palettePanel.classList.contains("open") ? closePanel() : openPanel();
 });
+paletteClose.addEventListener("click", closePanel);
+paletteBackdrop.addEventListener("click", closePanel);
 
 document.addEventListener("click", (e) => {
-  if (!palettePanel.contains(e.target) && e.target !== paletteToggle) {
-    palettePanel.classList.remove("open");
-  }
+  if (!palettePanel.contains(e.target) && e.target !== paletteToggle) closePanel();
 });
 
-swatches.forEach(sw => {
-  sw.addEventListener("click", () => {
-    root.setAttribute("data-palette", sw.dataset.palette);
-    swatches.forEach(s => s.classList.remove("active"));
-    sw.classList.add("active");
+// Ambiance (color palette)
+ambianceRows.forEach(row => {
+  row.addEventListener("click", () => {
+    root.setAttribute("data-palette", row.dataset.palette);
+    ambianceRows.forEach(r => r.classList.remove("active"));
+    row.classList.add("active");
   });
+});
+
+// Thème clair / sombre
+themeSwitch.addEventListener("click", () => {
+  const isDark = root.getAttribute("data-theme") === "dark";
+  root.setAttribute("data-theme", isDark ? "light" : "dark");
+  themeSwitch.classList.toggle("active", !isDark);
+  themeSwitch.setAttribute("aria-checked", String(!isDark));
+});
+
+// Contraste élevé
+contrastToggle.addEventListener("click", () => {
+  const isHigh = root.getAttribute("data-contrast") === "high";
+  root.setAttribute("data-contrast", isHigh ? "normal" : "high");
+  contrastToggle.classList.toggle("active", !isHigh);
+  contrastToggle.setAttribute("aria-checked", String(!isHigh));
+});
+
+// Réduire les animations
+let reduceMotion = false;
+motionToggle.addEventListener("click", () => {
+  reduceMotion = !reduceMotion;
+  root.setAttribute("data-motion", reduceMotion ? "reduced" : "normal");
+  motionToggle.classList.toggle("active", reduceMotion);
+  motionToggle.setAttribute("aria-checked", String(reduceMotion));
 });
 
 // ===========================================================
@@ -224,6 +255,7 @@ if (!isCoarsePointer) {
 if (!isCoarsePointer) {
   document.querySelectorAll("[data-tilt]").forEach(el => {
     el.addEventListener("mousemove", (e) => {
+      if (reduceMotion) return;
       const rect = el.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
@@ -236,6 +268,7 @@ if (!isCoarsePointer) {
 
   document.querySelectorAll("[data-tilt-soft]").forEach(el => {
     el.addEventListener("mousemove", (e) => {
+      if (reduceMotion) return;
       const rect = el.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
@@ -253,6 +286,7 @@ if (!isCoarsePointer) {
 if (!isCoarsePointer) {
   document.querySelectorAll("[data-magnetic]").forEach(el => {
     el.addEventListener("mousemove", (e) => {
+      if (reduceMotion) return;
       const rect = el.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
@@ -302,7 +336,7 @@ axisBtns.forEach(btn => {
 });
 
 function animateCube() {
-  if (rotating) {
+  if (rotating && !reduceMotion) {
     if (axis === "x" || axis === "free") rotX += speed;
     if (axis === "y" || axis === "free") rotY += speed * 0.75;
     cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
