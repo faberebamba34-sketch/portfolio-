@@ -198,10 +198,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ===========================================================
    APPARENCE PANEL — palette, thème, accessibilité
    =========================================================== */
-.palette-picker { position: relative; }
 .palette-toggle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; transition: border-color .25s ease, transform .25s ease; position: relative; z-index: 101; }
 .palette-toggle:hover { border-color: var(--accent); transform: rotate(-12deg); }
 .palette-toggle-dot { width: 16px; height: 16px; border-radius: 50%; background: conic-gradient(from 0deg, #22b573, #2dd4a7, #2fb2e8, #5b6cff, #9b6bff, #ff5c9e, #ff6b5e, #f2b134, #22b573); }
+
+/* Floating trigger — mobile only, lives at body level so it's never affected by header stacking */
+.palette-fab {
+  display: none;
+  position: fixed; bottom: 90px; right: 20px; z-index: 96;
+  width: 52px; height: 52px; border-radius: 50%;
+  align-items: center; justify-content: center;
+  background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow);
+  transition: transform .25s ease;
+}
+.palette-fab:active { transform: scale(.94); }
 
 .palette-backdrop {
   position: fixed; inset: 0; z-index: 98; background: rgba(0,0,0,.4);
@@ -209,8 +219,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .palette-backdrop.open { opacity: 1; pointer-events: auto; }
 
+/* Panel is a direct <body> child positioned in fixed viewport coordinates —
+   independent of the header's backdrop-filter stacking context. */
 .palette-panel {
-  position: absolute; top: 52px; right: 0; width: 300px;
+  position: fixed; top: 66px; right: 24px; width: 300px;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   box-shadow: var(--shadow); opacity: 0; transform: translateY(-8px); pointer-events: none;
   transition: opacity .25s ease, transform .25s ease; z-index: 99; overflow: hidden;
@@ -251,6 +263,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .switch.active .switch-knob { transform: translateX(18px); background: var(--accent); }
 
 @media (max-width: 720px) {
+  .palette-toggle { display: none; }
+  .palette-fab { display: flex; }
   .palette-panel {
     position: fixed; top: auto; bottom: 0; left: 0; right: 0; width: 100%;
     border-radius: 20px 20px 0 0; transform: translateY(100%);

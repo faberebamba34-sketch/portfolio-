@@ -38,80 +38,9 @@
     </nav>
 
     <div class="header-actions">
-      <div class="palette-picker">
-        <button class="palette-toggle" id="paletteToggle" aria-label="Apparence" title="Apparence">
-          <span class="palette-toggle-dot"></span>
-        </button>
-
-        <div class="palette-backdrop" id="paletteBackdrop"></div>
-
-        <div class="palette-panel" id="palettePanel">
-          <div class="palette-panel-head">
-            <span>Apparence</span>
-            <button class="palette-close" id="paletteClose" aria-label="Fermer">&times;</button>
-          </div>
-
-          <div class="palette-panel-body">
-            <p class="palette-section-label">Thème</p>
-            <div class="a11y-row">
-              <span>Mode sombre</span>
-              <button class="switch active" id="themeSwitch" role="switch" aria-checked="true">
-                <span class="switch-knob"></span>
-              </button>
-            </div>
-
-            <p class="palette-section-label">Ambiance</p>
-            <div class="ambiance-list">
-              <button class="ambiance-row active" data-palette="emerald">
-                <span class="ambiance-preview" style="--c1:#22b573;--c2:#e8a33d"><i></i><i></i></span>
-                <span class="ambiance-name">Émeraude</span>
-              </button>
-              <button class="ambiance-row" data-palette="corail">
-                <span class="ambiance-preview" style="--c1:#ff6b5e;--c2:#ffb84d"><i></i><i></i></span>
-                <span class="ambiance-name">Corail</span>
-              </button>
-              <button class="ambiance-row" data-palette="ocean">
-                <span class="ambiance-preview" style="--c1:#2fb2e8;--c2:#7c5cff"><i></i><i></i></span>
-                <span class="ambiance-name">Océan</span>
-              </button>
-              <button class="ambiance-row" data-palette="violet">
-                <span class="ambiance-preview" style="--c1:#9b6bff;--c2:#ff6bcb"><i></i><i></i></span>
-                <span class="ambiance-name">Violette</span>
-              </button>
-              <button class="ambiance-row" data-palette="rose">
-                <span class="ambiance-preview" style="--c1:#ff5c9e;--c2:#ffb84d"><i></i><i></i></span>
-                <span class="ambiance-name">Rose</span>
-              </button>
-              <button class="ambiance-row" data-palette="ambre">
-                <span class="ambiance-preview" style="--c1:#f2b134;--c2:#ff6b5e"><i></i><i></i></span>
-                <span class="ambiance-name">Ambre</span>
-              </button>
-              <button class="ambiance-row" data-palette="indigo">
-                <span class="ambiance-preview" style="--c1:#5b6cff;--c2:#2fb2e8"><i></i><i></i></span>
-                <span class="ambiance-name">Indigo</span>
-              </button>
-              <button class="ambiance-row" data-palette="menthe">
-                <span class="ambiance-preview" style="--c1:#2dd4a7;--c2:#f2b134"><i></i><i></i></span>
-                <span class="ambiance-name">Menthe</span>
-              </button>
-            </div>
-
-            <p class="palette-section-label">Accessibilité</p>
-            <div class="a11y-row">
-              <span>Contraste élevé</span>
-              <button class="switch" id="contrastToggle" role="switch" aria-checked="false">
-                <span class="switch-knob"></span>
-              </button>
-            </div>
-            <div class="a11y-row">
-              <span>Réduire les animations</span>
-              <button class="switch" id="motionToggle" role="switch" aria-checked="false">
-                <span class="switch-knob"></span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <button class="palette-toggle" id="paletteToggle" aria-label="Apparence" title="Apparence">
+        <span class="palette-toggle-dot"></span>
+      </button>
 
       <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu">
         <span></span><span></span><span></span>
@@ -119,6 +48,79 @@
     </div>
   </div>
 </header>
+
+<button class="palette-fab" id="paletteFab" aria-label="Apparence" title="Apparence">
+  <span class="palette-toggle-dot"></span>
+</button>
+
+<div class="palette-backdrop" id="paletteBackdrop"></div>
+
+<div class="palette-panel" id="palettePanel">
+  <div class="palette-panel-head">
+    <span>Apparence</span>
+    <button class="palette-close" id="paletteClose" aria-label="Fermer">&times;</button>
+  </div>
+
+  <div class="palette-panel-body">
+    <p class="palette-section-label">Thème</p>
+    <div class="a11y-row">
+      <span>Mode sombre</span>
+      <button class="switch active" id="themeSwitch" role="switch" aria-checked="true">
+        <span class="switch-knob"></span>
+      </button>
+    </div>
+
+    <p class="palette-section-label">Ambiance</p>
+    <div class="ambiance-list">
+      <button class="ambiance-row active" data-palette="emerald">
+        <span class="ambiance-preview" style="--c1:#22b573;--c2:#e8a33d"><i></i><i></i></span>
+        <span class="ambiance-name">Émeraude</span>
+      </button>
+      <button class="ambiance-row" data-palette="corail">
+        <span class="ambiance-preview" style="--c1:#ff6b5e;--c2:#ffb84d"><i></i><i></i></span>
+        <span class="ambiance-name">Corail</span>
+      </button>
+      <button class="ambiance-row" data-palette="ocean">
+        <span class="ambiance-preview" style="--c1:#2fb2e8;--c2:#7c5cff"><i></i><i></i></span>
+        <span class="ambiance-name">Océan</span>
+      </button>
+      <button class="ambiance-row" data-palette="violet">
+        <span class="ambiance-preview" style="--c1:#9b6bff;--c2:#ff6bcb"><i></i><i></i></span>
+        <span class="ambiance-name">Violette</span>
+      </button>
+      <button class="ambiance-row" data-palette="rose">
+        <span class="ambiance-preview" style="--c1:#ff5c9e;--c2:#ffb84d"><i></i><i></i></span>
+        <span class="ambiance-name">Rose</span>
+      </button>
+      <button class="ambiance-row" data-palette="ambre">
+        <span class="ambiance-preview" style="--c1:#f2b134;--c2:#ff6b5e"><i></i><i></i></span>
+        <span class="ambiance-name">Ambre</span>
+      </button>
+      <button class="ambiance-row" data-palette="indigo">
+        <span class="ambiance-preview" style="--c1:#5b6cff;--c2:#2fb2e8"><i></i><i></i></span>
+        <span class="ambiance-name">Indigo</span>
+      </button>
+      <button class="ambiance-row" data-palette="menthe">
+        <span class="ambiance-preview" style="--c1:#2dd4a7;--c2:#f2b134"><i></i><i></i></span>
+        <span class="ambiance-name">Menthe</span>
+      </button>
+    </div>
+
+    <p class="palette-section-label">Accessibilité</p>
+    <div class="a11y-row">
+      <span>Contraste élevé</span>
+      <button class="switch" id="contrastToggle" role="switch" aria-checked="false">
+        <span class="switch-knob"></span>
+      </button>
+    </div>
+    <div class="a11y-row">
+      <span>Réduire les animations</span>
+      <button class="switch" id="motionToggle" role="switch" aria-checked="false">
+        <span class="switch-knob"></span>
+      </button>
+    </div>
+  </div>
+</div>
 
 <main>
 
@@ -323,30 +325,29 @@
   <section class="marquee-section" aria-label="Technologies utilisées">
     <div class="marquee-track">
       <div class="marquee-group">
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/javascript.svg" alt="" loading="lazy"></span><span class="tech-label">JavaScript</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/php.svg" alt="" loading="lazy"></span><span class="tech-label">PHP</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/python.svg" alt="" loading="lazy"></span><span class="tech-label">Python</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/html5.svg" alt="" loading="lazy"></span><span class="tech-label">HTML5</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/css3.svg" alt="" loading="lazy"></span><span class="tech-label">CSS3</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/nodejs.svg" alt="" loading="lazy"></span><span class="tech-label">Node.js</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/mysql.svg" alt="" loading="lazy"></span><span class="tech-label">MySQL</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/mongodb.svg" alt="" loading="lazy"></span><span class="tech-label">MongoDB</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/postgresql.svg" alt="" loading="lazy"></span><span class="tech-label">PostgreSQL</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/bootstrap.svg" alt="" loading="lazy"></span><span class="tech-label">Bootstrap</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/git.svg" alt="" loading="lazy"></span><span class="tech-label">Git</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="javascript.svg" alt="" loading="lazy"></span><span class="tech-label">JavaScript</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="php.svg" alt="" loading="lazy"></span><span class="tech-label">PHP</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="python.svg" alt="" loading="lazy"></span><span class="tech-label">Python</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="html5.svg" alt="" loading="lazy"></span><span class="tech-label">HTML5</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="css3.svg" alt="" loading="lazy"></span><span class="tech-label">CSS3</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="nodejs.svg" alt="" loading="lazy"></span><span class="tech-label">Node.js</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="mysql.svg" alt="" loading="lazy"></span><span class="tech-label">MySQL</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="mongodb.svg" alt="" loading="lazy"></span><span class="tech-label">MongoDB</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="postgresql.svg" alt="" loading="lazy"></span><span class="tech-label">PostgreSQL</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="git.svg" alt="" loading="lazy"></span><span class="tech-label">Git</span></span>
       </div>
       <div class="marquee-group" aria-hidden="true">
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/javascript.svg" alt="" loading="lazy"></span><span class="tech-label">JavaScript</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/php.svg" alt="" loading="lazy"></span><span class="tech-label">PHP</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/python.svg" alt="" loading="lazy"></span><span class="tech-label">Python</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/html5.svg" alt="" loading="lazy"></span><span class="tech-label">HTML5</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/css3.svg" alt="" loading="lazy"></span><span class="tech-label">CSS3</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/nodejs.svg" alt="" loading="lazy"></span><span class="tech-label">Node.js</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/mysql.svg" alt="" loading="lazy"></span><span class="tech-label">MySQL</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/mongodb.svg" alt="" loading="lazy"></span><span class="tech-label">MongoDB</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/postgresql.svg" alt="" loading="lazy"></span><span class="tech-label">PostgreSQL</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/bootstrap.svg" alt="" loading="lazy"></span><span class="tech-label">Bootstrap</span></span>
-        <span class="tech-chip"><span class="tech-icon"><img src="assets/icons/git.svg" alt="" loading="lazy"></span><span class="tech-label">Git</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="javascript.svg" alt="" loading="lazy"></span><span class="tech-label">JavaScript</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="php.svg" alt="" loading="lazy"></span><span class="tech-label">PHP</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="python.svg" alt="" loading="lazy"></span><span class="tech-label">Python</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="html5.svg" alt="" loading="lazy"></span><span class="tech-label">HTML5</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="css3.svg" alt="" loading="lazy"></span><span class="tech-label">CSS3</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="nodejs.svg" alt="" loading="lazy"></span><span class="tech-label">Node.js</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="mysql.svg" alt="" loading="lazy"></span><span class="tech-label">MySQL</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="mongodb.svg" alt="" loading="lazy"></span><span class="tech-label">MongoDB</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="postgresql.svg" alt="" loading="lazy"></span><span class="tech-label">PostgreSQL</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="bootstrap.svg" alt="" loading="lazy"></span><span class="tech-label">Bootstrap</span></span>
+        <span class="tech-chip"><span class="tech-icon"><img src="git.svg" alt="" loading="lazy"></span><span class="tech-label">Git</span></span>
       </div>
     </div>
   </section>
@@ -454,7 +455,7 @@
             <span class="editor-filename">azimut.html</span>
           </div>
           <div class="project-media">
-            <img src="assets/azimut.png" alt="Aperçu du site Azimut" loading="lazy">
+            <img src="azimut.png" alt="Aperçu du site Azimut" loading="lazy">
           </div>
           <div class="project-body">
             <h3>Azimut</h3>
@@ -584,7 +585,7 @@
             le formulaire ou directement sur l'un de mes réseaux.
           </p>
           <div class="social-row">
-            <a href="https://github.com/faberebamba34-sketch" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+            <a href="https://github.com/" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.2.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
             </a>
             <a href="https://wa.me/22507190358" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">

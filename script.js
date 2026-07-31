@@ -4,6 +4,7 @@
 const root = document.documentElement;
 
 const paletteToggle = document.getElementById("paletteToggle");
+const paletteFab = document.getElementById("paletteFab");
 const paletteClose = document.getElementById("paletteClose");
 const palettePanel = document.getElementById("palettePanel");
 const paletteBackdrop = document.getElementById("paletteBackdrop");
@@ -20,16 +21,19 @@ function closePanel() {
   palettePanel.classList.remove("open");
   paletteBackdrop.classList.remove("open");
 }
-
-paletteToggle.addEventListener("click", (e) => {
+function togglePanel(e) {
   e.stopPropagation();
   palettePanel.classList.contains("open") ? closePanel() : openPanel();
-});
+}
+
+paletteToggle.addEventListener("click", togglePanel);
+if (paletteFab) paletteFab.addEventListener("click", togglePanel);
 paletteClose.addEventListener("click", closePanel);
 paletteBackdrop.addEventListener("click", closePanel);
 
 document.addEventListener("click", (e) => {
-  if (!palettePanel.contains(e.target) && e.target !== paletteToggle) closePanel();
+  const clickedTrigger = e.target.closest(".palette-toggle, .palette-fab");
+  if (!palettePanel.contains(e.target) && !clickedTrigger) closePanel();
 });
 
 // Ambiance (color palette)
