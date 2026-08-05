@@ -144,7 +144,7 @@ const codeLines = [
   "  name: \"Fabère Bamba\",",
   "  role: \"Développeur Full-Stack\",",
   "  location: \"Abidjan, CI\",",
-  "  formation: \"BTS IDA @ AIBS\",",
+  "  formation: \"BTS IDA \",",
   "  stack: [\"JavaScript\", \"PHP\", \"Node.js\", \"MySQL\"],",
   "  currentGoal: \"Licence Informatique (L3)\",",
   "};",
